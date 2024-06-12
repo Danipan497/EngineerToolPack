@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\EngineerToolPack.Application\EngineerToolPack.Application.csproj" />
+    <ProjectReference Include="..\EngineerToolPack.Contracts\EngineerToolPack.Contracts.csproj" />
+    <ProjectReference Include="..\EngineerToolPack.Infrastructure\EngineerToolPack.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
