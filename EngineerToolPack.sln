@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineerToolPack.API", "EngineerToolPack.API\EngineerToolPack.API.csproj", "{F93FBFF8-3425-4925-81A5-7CEBE0DEF8DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EngineerToolPack.API", "EngineerToolPack.API\EngineerToolPack.API.csproj", "{F93FBFF8-3425-4925-81A5-7CEBE0DEF8DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineerToolPack.Application", "EngineerToolPack.Application\EngineerToolPack.Application.csproj", "{B858BFB4-D673-4EE1-8A3B-88A565708FF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EngineerToolPack.Application", "EngineerToolPack.Application\EngineerToolPack.Application.csproj", "{B858BFB4-D673-4EE1-8A3B-88A565708FF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineerToolPack.Contracts", "EngineerToolPack.Contracts\EngineerToolPack.Contracts.csproj", "{0F44CA56-5289-4351-8EAA-AB6444BD4B7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EngineerToolPack.Contracts", "EngineerToolPack.Contracts\EngineerToolPack.Contracts.csproj", "{0F44CA56-5289-4351-8EAA-AB6444BD4B7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineerToolPack.Domain", "EngineerToolPack.Domain\EngineerToolPack.Domain.csproj", "{C866EF39-0DCC-494D-873E-20E0A541AA09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EngineerToolPack.Domain", "EngineerToolPack.Domain\EngineerToolPack.Domain.csproj", "{C866EF39-0DCC-494D-873E-20E0A541AA09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineerToolPack.Infrastructure", "EngineerToolPack.Infrastructure\EngineerToolPack.Infrastructure.csproj", "{D551A6DE-1AB8-41B6-A52F-C90C2641B749}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EngineerToolPack.Infrastructure", "EngineerToolPack.Infrastructure\EngineerToolPack.Infrastructure.csproj", "{D551A6DE-1AB8-41B6-A52F-C90C2641B749}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
