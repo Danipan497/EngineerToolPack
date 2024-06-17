@@ -1,7 +1,9 @@
-﻿namespace EngineerToolPack.Application.Common.Interfaces.Authentication
+﻿using EngineerToolPack.Domain.Entities;
+
+namespace EngineerToolPack.Application.Common.Interfaces.Authentication
 {
     public interface IJwtTokenGenerator
     {
-        string GenerateToken(Guid userId, string firstName, string lastName);
+        string GenerateToken(User user);
     }
 }

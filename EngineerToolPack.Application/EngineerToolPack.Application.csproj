@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EngineerToolPack.Contracts\EngineerToolPack.Contracts.csproj" />
+    <ProjectReference Include="..\EngineerToolPack.Domain\EngineerToolPack.Domain.csproj" />
   </ItemGroup>
 
 </Project>
