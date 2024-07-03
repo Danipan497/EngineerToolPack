@@ -1,4 +1,5 @@
-﻿using EngineerToolPack.Application.Services.Authentication;
+﻿using EngineerToolPack.API.Filters;
+using EngineerToolPack.Application.Services.Authentication;
 using EngineerToolPack.Contracts.Authentication;
 using Microsoft.AspNetCore.Mvc;
 
