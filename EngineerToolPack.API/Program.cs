@@ -1,4 +1,4 @@
-using EngineerToolPack.API.Errors;
+using EngineerToolPack.API.Common.Errors;
 using EngineerToolPack.API.Filters;
 using EngineerToolPack.Application;
 using EngineerToolPack.Infrastructure;
@@ -12,7 +12,6 @@ builder.Services
     .AddApplication()
     .AddInfrastructure(builder.Configuration);
 
-//builder.Services.AddControllers(option => option.Filters.Add<ErrorHandlingFilterAttribute>());
 builder.Services.AddControllers();
 
 builder.Services.AddSingleton<ProblemDetailsFactory, EngineerToolPackProblemDetailsFactory>();
@@ -30,7 +29,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseMiddleware<ErrorHandlingMiddleware>();
+
 
 app.UseExceptionHandler("/error");
 

@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Diagnostics;
 
-namespace EngineerToolPack.API.Errors
+using System.Diagnostics;
+using ErrorOr;
+using EngineerToolPack.API.Common.Http;
+
+namespace EngineerToolPack.API.Common.Errors
 {
     public class EngineerToolPackProblemDetailsFactory : ProblemDetailsFactory
     {
@@ -91,14 +93,12 @@ namespace EngineerToolPack.API.Errors
                 problemDetails.Extensions["traceId"] = traceId;
             }
 
-            problemDetails.Extensions.Add("customProperty", "customValue");
+            var errors = httpContext?.Items[HttpContextItemKeys.Errors] as List<Error>;
 
-            //var errors = httpContext?.Items[HttpContextItemKeys.Errors] as List<Error>;
-
-            //if (errors is not null)
-            //{
-            //    problemDetails.Extensions.Add("errorCodes", errors.Select(e => e.Code));
-            //}
+            if (errors is not null)
+            {
+                problemDetails.Extensions.Add("errorCodes", errors.Select(e => e.Code));
+            }
         }
     }
 }

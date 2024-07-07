@@ -1,6 +1,8 @@
 ﻿using EngineerToolPack.Application.Common.Interfaces.Authentication;
 using EngineerToolPack.Application.Common.Interfaces.Persistence;
+using EngineerToolPack.Domain.Common.Errors;
 using EngineerToolPack.Domain.Entities;
+using ErrorOr;
 
 namespace EngineerToolPack.Application.Services.Authentication
 {
@@ -16,13 +18,13 @@ namespace EngineerToolPack.Application.Services.Authentication
             _userRepository = userRepository;
         }
 
-        public AuthenticationResult Register(string firstName, string lastName, string email, string password)
+        public ErrorOr<AuthenticationResult> Register(string firstName, string lastName, string email, string password)
         {
 
             // 1.Validate the user doesn't exist
             if (_userRepository.GetUserByEmail(email) is not null)
             {
-                throw new Exception("User with given email already exists.");
+                return Errors.User.DuplicateEmail;
             }
 
             // 2. Create user (generate unique ID) & Persist to DB
@@ -45,24 +47,25 @@ namespace EngineerToolPack.Application.Services.Authentication
                 token);
         }
 
-        public AuthenticationResult Login(string email, string password)
+        public ErrorOr<AuthenticationResult> Login(string email, string password)
         {
 
             // 1. Validate the user exists
 
             if (_userRepository.GetUserByEmail(email) is not User user)
             {
-                throw new Exception("User with given email does not exists.");
+                return Errors.Authentication.InvalidCredentials;
             };
 
             // 2. Validate the password is correct
 
             if (user.Password != password)
             {
-                throw new Exception("Invalid password.");
-                // 3. Create JWT token
+                return new[] { Errors.Authentication.InvalidCredentials };
             }
-                var token = _jwtTokenGenerator.GenerateToken(user);
+
+            // 3. Create JWT token
+            var token = _jwtTokenGenerator.GenerateToken(user);
 
             return new AuthenticationResult(
                 user,
