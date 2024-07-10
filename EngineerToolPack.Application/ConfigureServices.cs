@@ -1,4 +1,5 @@
-﻿using EngineerToolPack.Application.Services.Authentication;
+﻿using EngineerToolPack.Application.Services.Authentication.Commands;
+using EngineerToolPack.Application.Services.Authentication.Queries;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EngineerToolPack.Application
@@ -7,7 +8,8 @@ namespace EngineerToolPack.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IAuthenticationCommandService, AuthenticationCommandService>();
+            services.AddScoped<IAuthenticationQueryService, AuthenticationQueryService>();
 
             return services;    
         }
